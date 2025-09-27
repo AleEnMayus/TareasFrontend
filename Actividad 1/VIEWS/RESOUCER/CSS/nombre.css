@@ -1,0 +1,42 @@
+form {
+  width: 90%;
+}
+
+.input-unit {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-unit input {
+  width: 100%;
+  padding: 16px 12px 8px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+.input-unit label {
+  position: absolute;
+  top: 16px;
+  left: 14px;
+  color: #9e9e9e;
+  background: white;
+  padding: 0 4px;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.2s ease all;
+}
+
+.input-unit input:focus + label
+{
+  top: -8px;
+  left: 10px;
+  font-size: 12px;
+  background: white;
+  color: #8000ff;
+}
+
+input:focus {
+  border-color: #8000ff;
+}
