@@ -1,0 +1,148 @@
+.container-div {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 380px;
+    padding: 35px 30px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background: white;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: slideInUp 0.5s ease-out;
+}
+
+/* Título */
+.text-bold {
+    font-weight: 625 !important;
+}
+
+.h1 {
+    color: #8B5CF6; /* Fallback: color sólido si el gradiente no funciona */
+    background: linear-gradient(45deg, #8B5CF6, #A78BFA, #F59E0B);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.5rem !important;
+}
+
+/* Slogan */
+span {
+    font-weight: 625 !important;
+    margin-bottom: 5rem !important;
+    display: block;
+    color: #6b7280;
+}
+
+/* Formulario */
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+.login-container label {
+    display: block;
+    width: 100%;
+    margin-bottom: 6px;
+    text-align: left;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Inputs */
+.login-container input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 18px;
+    border: 1.5px solid #ddd;
+    border-radius: 12px;
+    font-size: 16px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.login-container input:focus {
+    border-color: #F59E0B;
+    outline: none;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(175, 76, 172, 0.1);
+}
+
+/* Button */
+.login-container button {
+    padding: 12px;
+    border: none;
+    width: 100%;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #8B5CF6, #F59E0B);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+}
+
+.login-container button:hover {
+    box-shadow: 0 6px 20px rgba(175, 76, 172, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Mensaje de error mejorado */
+.errorMsg {
+    padding: 12px 15px;
+    border: 1px solid #ff4757;
+    background: #fff5f5;
+    border-radius: 10px;
+    color: #d63031;
+    font-size: 13px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Animación de entrada sutil */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Estilos para el contenedor principal */
+.container-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container-div {
+        padding: 15px;
+    }
+    
+    .login-container {
+        padding: 25px 20px;
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,14 @@
+<div class="container-div">
+    <div class="login-container">
+        <h1 class="text-bold h1">MeetPoint</h1>
+        <span>Tu punto de encuentro digital</span>
+        <div class="errorMsg" id="errorMsg" [style.display]="showErrorDiv ? 'block' : 'none'">{{ errorMsg }}</div>
+        <form id="loginForm" (ngSubmit)="login()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" [(ngModel)]="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" [(ngModel)]="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,127 @@
+<app-navbar />
+<div class="calculator-container">
+    <h1>Menú</h1>
+    <div class="row">
+        <!-- Sidebar Menu -->
+        <div class="col-lg-4 col-md-5">
+            <div class="sidebar-container">
+                <div class="list-group">
+                    <a class="list-group-item list-group-item-action" 
+                       [class.active]="activeSection === 'balance'" 
+                       (click)="setActiveSection('balance')">
+                        <i class="fas fa-wallet"></i>Balance
+                    </a>
+                    <a class="list-group-item list-group-item-action" 
+                       [class.active]="activeSection === 'income'" 
+                       (click)="setActiveSection('income')">
+                        <i class="fas fa-plus-circle"></i>Agregar Ingresos
+                    </a>
+                    <a class="list-group-item list-group-item-action" 
+                       [class.active]="activeSection === 'expenses'" 
+                       (click)="setActiveSection('expenses')">
+                        <i class="fas fa-minus-circle"></i>Agregar Gastos
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="col-lg-8 col-md-7">
+            <div class="content-container">
+                
+                <!-- Balance Section -->
+                <div *ngIf="activeSection === 'balance'" class="content-section active">
+                    <h2><i class="fas fa-chart-line me-2"></i>Balance Actual</h2>
+                    <div class="balance-card">
+                        <h3>Tu Balance Total</h3>
+                        <div class="balance-amount">${{ totalBalance.toFixed(2) }}</div>
+                        <p>Actualizado hoy</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card border-success">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-arrow-up text-success fs-2"></i>
+                                    <h5 class="text-success">Ingresos</h5>
+                                    <h4 class="text-success">${{ totalIncome.toFixed(2) }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-danger">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-arrow-down text-danger fs-2"></i>
+                                    <h5 class="text-danger">Gastos</h5>
+                                    <h4 class="text-danger">${{ totalExpenses.toFixed(2) }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Income Section -->
+                <div *ngIf="activeSection === 'income'" class="content-section active">
+                    <h2><i class="fas fa-plus-circle me-2"></i>Agregar Ingresos</h2>
+                    <form (ngSubmit)="addIncome()" #incomeForm="ngForm">
+                        <div class="form-group">
+                            <label for="incomeAmount">Cantidad</label>
+                            <input type="number" 
+                                   class="form-control" 
+                                   id="incomeAmount" 
+                                   name="incomeAmount"
+                                   [(ngModel)]="newIncome.amount" 
+                                   placeholder="0.00" 
+                                   step="0.01"
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <label for="incomeDescription">Descripción</label>
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="incomeDescription" 
+                                   name="incomeDescription"
+                                   [(ngModel)]="newIncome.description"
+                                   placeholder="Ej: Salario, Freelance, etc."
+                                   required>
+                        </div>
+                        <button type="submit" class="btn btn-custom" [disabled]="!incomeForm.valid">
+                            <i class="fas fa-plus me-2"></i>Agregar Ingreso
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Expenses Section -->
+                <div *ngIf="activeSection === 'expenses'" class="content-section active">
+                    <h2><i class="fas fa-minus-circle me-2"></i>Agregar Gastos</h2>
+                    <form (ngSubmit)="addExpense()" #expenseForm="ngForm">
+                        <div class="form-group">
+                            <label for="expenseAmount">Cantidad</label>
+                            <input type="number" 
+                                   class="form-control" 
+                                   id="expenseAmount" 
+                                   name="expenseAmount"
+                                   [(ngModel)]="newExpense.amount"
+                                   placeholder="0.00" 
+                                   step="0.01"
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expenseDescription">Descripción</label>
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="expenseDescription" 
+                                   name="expenseDescription"
+                                   [(ngModel)]="newExpense.description"
+                                   placeholder="Ej: Comida, Transporte, etc."
+                                   required>
+                        </div>
+                        <button type="submit" class="btn btn-custom" [disabled]="!expenseForm.valid">
+                            <i class="fas fa-minus me-2"></i>Agregar Gasto
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

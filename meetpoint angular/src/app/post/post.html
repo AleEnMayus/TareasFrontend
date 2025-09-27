@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+
+<div class="post-container">
+  <div class="post-detail" *ngIf="post; else notFound">
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.content }}</p>
+    <button (click)="goBack()">Volver</button>
+  </div>
+
+  <ng-template #notFound>
+    <div class="post-detail">
+      <h3>Publicación no encontrada!</h3>
+      <button (click)="goBack()">Volver</button>
+    </div>
+  </ng-template>
+</div>

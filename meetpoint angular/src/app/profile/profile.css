@@ -1,0 +1,117 @@
+/* Contenedor principal */
+.container-custom {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 0 0 0!important;
+}
+
+/* Card principal */
+.card {
+    width: 100% !important;
+    max-width: 800px !important;
+    padding: 30px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background: white;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-body {
+    padding: 0;
+}
+
+/* Imagen de perfil */
+.card-body img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #8B5CF6;
+}
+
+/* Labels */
+.card-body span {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.card-body span:first-of-type {
+    margin-top: 0;
+}
+
+/* Títulos */
+.card-title {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #8B5CF6;
+    margin-bottom: 0 !important;
+    text-align: left;
+}
+
+/* Biografía */
+.card-text {
+    max-height: 100px;
+    width: 100%;
+    font-size: 16px;
+    color: #374151;
+    line-height: 1.5;
+    margin: 5px 0;
+    text-align: left;
+    border: none;
+    border-radius: 8px;  /* Bordes redondeados para un efecto más suave */
+}
+
+/* Efecto de enfoque */
+.card-text:focus {
+    outline: none;
+    border: 2px solid #8B5CF6;
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
+}
+
+
+/* Back btn */
+.Back-btn {
+    background-color: #8B5CF6;
+    color: white;
+    border: none;   
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .card {
+        max-width: 100%;
+        padding: 25px 20px;
+    }
+    
+    .card-body img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .card-title {
+        font-size: 1.3rem !important;
+    }
+}
